@@ -1,0 +1,29 @@
+<div class="outer-div">
+  <table>
+    <thead>
+    <tr>
+      <th>Assert Type</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let assert of asserts">
+      <td>{{assert.assert_type}}</td>
+      <td>{{assert.code}}</td>
+      <td>{{assert.name}}</td>
+      <td>{{assert.status}}</td>
+      <td>
+        <button routerLink="/get-by-id/{{assert.id}}" class="update">Update</button>
+        <button (click)="deleteById(assert.id)" class="delete">Delete</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <div class="buttonDiv">
+    <button class="add-new" (click)="navigateToAddNew()">+ Add New</button>
+  </div>
+</div>

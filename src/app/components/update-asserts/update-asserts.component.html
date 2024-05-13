@@ -1,0 +1,44 @@
+<div class="outer-div-2">
+  <div class="container">
+    <h1>Assertion Form</h1>
+    <form [formGroup]="updateAssertForm">
+      <div class="form-group">
+        <label for="assertType">Assert Type:</label>
+        <input type="text" id="assertType" name="assertType" required formControlName = "assert_type">
+      </div>
+      <div class="form-group">
+        <label for="assertCode">Assert Code:</label>
+        <input type="text" id="assertCode" name="assertCode" required formControlName="code">
+      </div>
+      <div class="form-group">
+        <label for="assertName">Assert Name:</label>
+        <input type="text" id="assertName" name="assertName" required formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="value">Value:</label>
+        <input type="text" id="value" name="value" formControlName="value">
+      </div>
+      <div class="form-group description">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5" required formControlName="desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="assertLocation">Assert Location:</label>
+        <input type="text" id="assertLocation" name="assertLocation" formControlName="location">
+      </div>
+      <div class="form-group">
+        <label for="employee">Employee:</label>
+        <input type="text" id="employee" name="employee" formControlName="employeeName">
+      </div>
+      <div class="form-group checkbox">
+        <label for="inactive">Inactive</label>
+        <input type="checkbox" id="inactive" name="inactive" [(ngModel)]="inactive" (change)="handleCheckboxChange($event)" formControlName="assert_status">
+      </div>
+      <div class="button-group">
+        <button (click)="updateAssert()" type="submit" class="update" routerLink="">Update</button>
+        <button (click)="handleCancel()" type="button" class="close">Close</button>
+      </div>
+    </form>
+  </div>
+</div>
+
